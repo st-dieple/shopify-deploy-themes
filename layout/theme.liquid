@@ -473,6 +473,10 @@
           document.getElementById("customPopup").style.display = "none";
         }
       };
+      function goToApp() {
+        console.log('go to app');
+        window.location = "https://play.google.com/store/apps/details?id=li.yapp.appBCA0E30B&hl=ja";
+      };
       // END
     });
     </script>
@@ -525,7 +529,7 @@
       <div class="popup-content">
         <p>Do you want to download our new application?</p>
         <button id="closePopup" type="cancel">Cancel</button>
-        <button type="submit">OK</button>
+        <button type="submit" onclick="goToApp">OK</button>
       </div>
     </div>
     <!-- END -->
