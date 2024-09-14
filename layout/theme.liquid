@@ -456,28 +456,29 @@
         console.log('showPopup');
         // Show custom popup
         document.addEventListener("DOMContentLoaded", function() {
-        // Hiển thị popup sau 5 giây
-        setTimeout(function() {
-          document.getElementById("customPopup").style.display = "block";
-        }, 1000);
-          // document.getElementById("customPopup").style.display = "block";
-      
-        // Đóng popup khi nhấn vào nút đóng
-        document.getElementById("closePopup").onclick = function() {
-          document.getElementById("customPopup").style.display = "none";
-        };
-      
-        // Đóng popup khi nhấn ra ngoài
-        window.onclick = function(event) {
-          if (event.target == document.getElementById("customPopup")) {
+          // Hiển thị popup sau 5 giây
+          setTimeout(function() {
+            document.getElementById("customPopup").style.display = "block";
+          }, 1000);
+            // document.getElementById("customPopup").style.display = "block";
+        
+          // Đóng popup khi nhấn vào nút đóng
+          document.getElementById("closePopup").onclick = function() {
             document.getElementById("customPopup").style.display = "none";
-          }
-        };
-        document.getElementById("openApp").onclick = function() {
-          window.location = url;
-        };
+          };
+        
+          // Đóng popup khi nhấn ra ngoài
+          window.onclick = function(event) {
+            if (event.target == document.getElementById("customPopup")) {
+              document.getElementById("customPopup").style.display = "none";
+            }
+          };
+          document.getElementById("openApp").onclick = function() {
+            window.location = url;
+          };
+        });
         // END
-      }
+      })
       // const webview = true;
       // if (webview) {
       //   document.head.insertAdjacentHTML("beforeend", `<style>header.header{display:none}</style>`)
@@ -512,7 +513,6 @@
         // Web browser
          showPopup("https://play.google.com/store/apps/details?id=li.yapp.appBCA0E30B&hl=ja");
       };
-      
     </script>
   </head>
 
