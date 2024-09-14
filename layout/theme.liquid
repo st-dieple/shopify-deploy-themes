@@ -452,38 +452,39 @@
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
-      const webview = true;
-      if (webview) {
-        document.head.insertAdjacentHTML("beforeend", `<style>header.header{display:none}</style>`)
+      // const webview = true;
+      // if (webview) {
+      //   document.head.insertAdjacentHTML("beforeend", `<style>header.header{display:none}</style>`)
+      // }
+    // });
+    console.log('Check user agent');
+    var userAgent = window.navigator.userAgent.toLowerCase();
+    var safariBrowser = /safari/.test(userAgent);
+    var iosDevice = /iphone|ipod|ipad/.test(userAgent);
+
+    if (userAgent.includes("android")) {
+      if (userAgent.includes("wv") || userAgent.includes("webview")) {
+        // Viewing in Android App (WebView)
+        document.body.classList.add('jna-webview');
+      } else {
+        // Viewing in Android Browsers
+        // if (window.confirm("Do you want to download our Newera application?")) {
+        //   window.location = "https://play.google.com/store/apps/details?id=li.yapp.appBCA0E30B&hl=ja";
+        // }
       }
-      // Show custom popup
-      document.addEventListener("DOMContentLoaded", function() {
-      // Hiển thị popup sau 5 giây
-      setTimeout(function() {
-        document.getElementById("customPopup").style.display = "block";
-      }, 1000);
-        // document.getElementById("customPopup").style.display = "block";
-    
-      // Đóng popup khi nhấn vào nút đóng
-      document.getElementById("closePopup").onclick = function() {
-        document.getElementById("customPopup").style.display = "none";
+    } else if (iosDevice) {
+      if (safariBrowser) {
+        // Viewing in Safari Browsers
+        // if (window.confirm("Do you want to download our Newera application?")) {
+        //   window.location = "https://apps.apple.com/jp/app/%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%A8%E3%83%A9%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA-new-era/id1457653980";
+        // }
+      } else {
+        // Viewing in iOS App (WebView)
+        document.body.classList.add('jna-webview');
       };
-    
-      // Đóng popup khi nhấn ra ngoài
-      window.onclick = function(event) {
-        if (event.target == document.getElementById("customPopup")) {
-          document.getElementById("customPopup").style.display = "none";
-        }
-      };
-      document.getElementById("openApp").onclick = function() {
-        window.location = "https://play.google.com/store/apps/details?id=li.yapp.appBCA0E30B&hl=ja";
-      };
-      function goToApp() {
-        console.log('go to app');
-        window.location = "https://play.google.com/store/apps/details?id=li.yapp.appBCA0E30B&hl=ja";
-      };
-      // END
-    });
+    } else {
+      // Web browser
+    };
     </script>
   </head>
 
@@ -499,36 +500,6 @@
         padding-top: 0;
       }
     </style>
-    <script>
-      console.log('Check user agent');
-      var userAgent = window.navigator.userAgent.toLowerCase();
-      var safariBrowser = /safari/.test(userAgent);
-      var iosDevice = /iphone|ipod|ipad/.test(userAgent);
-
-      if (userAgent.includes("android")) {
-        if (userAgent.includes("wv") || userAgent.includes("webview")) {
-          // Viewing in Android App (WebView)
-          document.body.classList.add('jna-webview');
-        } else {
-          // Viewing in Android Browsers
-          // if (window.confirm("Do you want to download our Newera application?")) {
-          //   window.location = "https://play.google.com/store/apps/details?id=li.yapp.appBCA0E30B&hl=ja";
-          // }
-        }
-      } else if (iosDevice) {
-        if (safariBrowser) {
-          // Viewing in Safari Browsers
-          // if (window.confirm("Do you want to download our Newera application?")) {
-          //   window.location = "https://apps.apple.com/jp/app/%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%A8%E3%83%A9%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA-new-era/id1457653980";
-          // }
-        } else {
-          // Viewing in iOS App (WebView)
-          document.body.classList.add('jna-webview');
-        };
-      } else {
-        // Web browser
-      };
-    </script>
 
     <!-- Custom popup HTML -->
     <div id="customPopup" style="display:none;">
