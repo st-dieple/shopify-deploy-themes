@@ -379,7 +379,7 @@
       }
 
       /* Custom popup style */
-      #customPopup {
+      #custom-popup {
         position: fixed;
         top: 0;
         left: 0;
@@ -457,22 +457,22 @@
         document.addEventListener("DOMContentLoaded", function() {
           // Hiển thị popup sau 5 giây
           setTimeout(function() {
-            document.getElementById("customPopup").style.display = "block";
+            document.getElementById("custom-popup").style.display = "block";
           }, 500);
             // document.getElementById("customPopup").style.display = "block";
           console.log('showPopup 22');      
           // Đóng popup khi nhấn vào nút đóng
-          document.getElementById("closePopup").onclick = function() {
-            document.getElementById("customPopup").style.display = "none";
+          document.getElementById("btn-close").onclick = function() {
+            document.getElementById("custom-popup").style.display = "none";
           };
         
           // Đóng popup khi nhấn ra ngoài
           window.onclick = function(event) {
-            if (event.target == document.getElementById("customPopup")) {
-              document.getElementById("customPopup").style.display = "none";
+            if (event.target == document.getElementById("custom-popup")) {
+              document.getElementById("custom-popup").style.display = "none";
             }
           };
-          document.getElementById("openApp").onclick = function() {
+          document.getElementById("btn-action").onclick = function() {
             window.location = url;
           };
         });
