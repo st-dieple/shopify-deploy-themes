@@ -485,7 +485,7 @@
         document.addEventListener("DOMContentLoaded", function() {
           // Hiển thị popup sau 5 giây
           setTimeout(function() {
-            document.getElementsByClassName("popup-backdrop").classList.add("show");
+            document.getElementsByClassName("popup-backdrop")[0].classList.add("show");
             document.getElementById("custom-popup").style.display = "block";
           }, 500);
             // document.getElementById("customPopup").style.display = "block";
