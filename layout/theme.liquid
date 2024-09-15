@@ -486,6 +486,7 @@
           
           // Close popup
           document.getElementById("btn-close").onclick = function() {
+            document.getElementById("custom-popup").classList.remove("show");
             document.getElementById("custom-popup").style.display = "none";
             document.getElementsByClassName("popup-backdrop")[0].style.display = "none";
           };
