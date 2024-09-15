@@ -499,7 +499,7 @@
           window.onclick = function(event) {
             if (event.target == document.getElementById("custom-popup")) {
               document.getElementById("custom-popup").style.display = "none";
-              document.body.classList.remove('open-popup');
+              documentgetElementsByClassName("popup-backdrop")[0].style.display = "none";
             }
           };
           document.getElementById("btn-action").onclick = function() {
@@ -537,7 +537,6 @@
         } else {
           // Viewing in iOS App (WebView)
           document.body.classList.add('jna-webview');
-          document.body.classList.add('open-popup');
         };
       } else {
         // Web browser
