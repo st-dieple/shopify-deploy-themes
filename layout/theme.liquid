@@ -414,7 +414,8 @@
         text-align: center;
         padding: 20px;
         position: fixed;
-        bottom: 0;
+        /* bottom: 0; */
+        bottom: -190px;
         width: 100%;
         transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
       }
@@ -483,7 +484,7 @@
           // Hiển thị popup sau 5 giây
           setTimeout(function() {
             document.getElementsByClassName("popup-backdrop")[0].classList.add("show");
-            document.getElementById("custom-popup").style.display = "block";
+            document.getElementById("custom-popup").style.bottom = "0";
           }, 500);
             // document.getElementById("customPopup").style.display = "block";
           console.log('showPopup 22');      
