@@ -499,6 +499,7 @@
           // Đóng popup khi nhấn ra ngoài
           window.onclick = function(event) {
             if (event.target == document.getElementById("custom-popup")) {
+              console.log('click out to close');
               document.getElementById("custom-popup").style.display = "none";
               documentgetElementsByClassName("popup-backdrop")[0].style.display = "none";
             }
