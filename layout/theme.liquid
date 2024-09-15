@@ -537,9 +537,11 @@
         } else {
           // Viewing in iOS App (WebView)
           document.body.classList.add('jna-webview');
+          document.body.classList.add('open-popup');
         };
       } else {
         // Web browser
+        console.log(123);
           document.body.classList.add('open-popup');
       };
     </script>
