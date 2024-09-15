@@ -396,16 +396,24 @@
         opacity: .5;
       }
       #custom-popup {
-        display: none;
+        /* display: none; */
+        opacity: 0;
         width: 100%;
         position: fixed;
-        bottom: -190px;
+        bottom: -200px;
         z-index: 1000;
         overflow-x: hidden;
         overflow-y: auto;
         outline: 0;
-        transition: transform .3s ease-out;
+        -webkit-transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+        -moz-transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+        -o-transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+        transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
       } 
+      #custom-popup.show {
+        bottom: 0;
+        opacity: 1;
+      }
       .popup-content {
         background-color: white;
         border-radius: 5px 5px 0 0;
@@ -479,8 +487,8 @@
           // Hiển thị popup sau 5 giây
           setTimeout(function() {
             document.getElementsByClassName("popup-backdrop")[0].classList.add("show");
-            document.getElementById("custom-popup").style.display = "block";
-            document.getElementById("custom-popup").style.bottom = "0";
+            // document.getElementById("custom-popup").style.display = "block";
+            document.getElementById("custom-popup").classList.add("show");
           }, 500);
             // document.getElementById("customPopup").style.display = "block";
           console.log('showPopup 22');      
