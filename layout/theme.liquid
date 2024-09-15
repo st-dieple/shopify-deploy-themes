@@ -404,7 +404,7 @@
         overflow-x: hidden;
         overflow-y: auto;
         outline: 0;
-        transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+        transition: transform .3s ease-out;
       } 
       .popup-content {
         background-color: white;
@@ -412,7 +412,7 @@
         text-align: center;
         padding: 20px;
         width: 100%;
-        transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+        transition: opacity .3s ease-out, bottom .3s ease-out;
       }
       .popup-logo {
         line-height: 1;
@@ -491,14 +491,14 @@
           };
         
           // Đóng popup khi nhấn ra ngoài
-          window.onclick = function(event) {
-            console.log(event);
-            if (event.target == document.getElementsByClassName("popup-backdrop")) {
-              console.log('click out to close');
-              document.getElementById("custom-popup").style.display = "none";
-              document.getElementsByClassName("popup-backdrop")[0].style.display = "none";
-            }
-          };
+          // window.onclick = function(event) {
+          //   console.log(event);
+          //   if (event.target == document.getElementsByClassName("popup-backdrop")) {
+          //     console.log('click out to close');
+          //     document.getElementById("custom-popup").style.display = "none";
+          //     document.getElementsByClassName("popup-backdrop")[0].style.display = "none";
+          //   }
+          // };
           document.getElementById("btn-action").onclick = function() {
             window.location = url;
           };
