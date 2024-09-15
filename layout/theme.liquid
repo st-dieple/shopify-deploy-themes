@@ -388,6 +388,12 @@
         height: 100vh;
         background-color: #000;
       }
+      .popup-backdrop.fade {
+        opacity: 0;
+      }
+      .popup-backdrop.show {
+        opacity: .5;
+      }
       #custom-popup {
         /* position: fixed;
         top: 0;
@@ -472,11 +478,12 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
       function showPopup(url) {
-        console.log('showPopup');
+        console.log('showPopup');popup-backdrop 
         // Show custom popup
         document.addEventListener("DOMContentLoaded", function() {
           // Hiển thị popup sau 5 giây
           setTimeout(function() {
+            document.getElementsByClassName("popup-backdrop")[0].classList.add("block");
             document.getElementById("custom-popup").style.display = "block";
           }, 500);
             // document.getElementById("customPopup").style.display = "block";
@@ -548,7 +555,7 @@
     </style>
 
     <!-- Custom popup HTML -->
-    <div class="popup-backdrop fade show"></div>
+    <div class="popup-backdrop fade"></div>
     <div id="custom-popup" style="display:none;">
       <div class="popup-content">
         <p>Do you want to download our new application?</p>
