@@ -540,6 +540,7 @@
         };
       } else {
         // Web browser
+          document.body.classList.add('open-popup');
       };
     </script>
   </head>
@@ -555,7 +556,7 @@
       body.jna-webview .main {
         padding-top: 0;
       }
-      body.jna-webview.open-popup .popup-backdrop {
+      body.open-popup .popup-backdrop {
         display: block;
       }
     </style>
