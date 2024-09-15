@@ -379,8 +379,17 @@
       }
 
       /* Custom popup style */
-      #custom-popup {
+      .popup-backdrop {
         position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+      }
+      #custom-popup {
+        /* position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -390,7 +399,18 @@
         justify-content: center;
         align-items: center;
         z-index: 9999;
-        transition: all 5s ease-in-out;
+        transition: all 5s ease-in-out; */
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        outline: 0;
       }
       
       .popup-content {
@@ -528,6 +548,8 @@
     </style>
 
     <!-- Custom popup HTML -->
+    class="modal-backdrop fade show"
+    <div class="popup-backdrop fade show"></div>
     <div id="custom-popup" style="display:none;">
       <div class="popup-content">
         <p>Do you want to download our new application?</p>
