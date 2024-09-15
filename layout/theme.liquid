@@ -493,6 +493,7 @@
           // Đóng popup khi nhấn vào nút đóng
           document.getElementById("btn-close").onclick = function() {
             document.getElementById("custom-popup").style.display = "none";
+            documentgetElementsByClassName("popup-backdrop")[0].style.display = "none";
           };
         
           // Đóng popup khi nhấn ra ngoài
